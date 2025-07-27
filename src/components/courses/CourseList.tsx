@@ -35,21 +35,19 @@ export default function CourseList({ onCourseSelect, selectedCourseId }: CourseL
       </div>
     )
   }
-
   if (error) {
     return (
-      <div className="text-center py-8">
-        <p className="text-red-600">Failed to load courses. Please try again.</p>
+      <div className="flex items-center justify-center h-64 animate-fade-in">
+        <span className="text-red-500 dark:text-red-400">Failed to load courses. Please try again.</span>
       </div>
     )
   }
-
   if (!courses || courses.length === 0) {
     return (
-      <div className="text-center py-8">
+      <div className="text-center py-8 animate-fade-in">
         <BookOpen className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-        <p className="text-gray-600">No courses found.</p>
-        <p className="text-sm text-gray-500 mt-2">
+        <p className="text-gray-600 dark:text-gray-300">No courses found.</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
           Make sure you are enrolled in courses on your Moodle site.
         </p>
       </div>
